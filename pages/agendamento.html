@@ -144,20 +144,7 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../assets/js/attyear.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service_worker.js')
-                    .then((registration) => {
-                        console.log('Service Worker registrado com sucesso:', registration)
-                    })
-                    .catch((error) => {
-                        console.log('Falha ao registrar o Service Worker:', error)
-                    })
-            })
-        }
-    </script>
+    <script src="../assets/js/scripts.js"></script>
 </body>
 
 </html>
