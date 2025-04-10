@@ -9,6 +9,8 @@
     --text-color: #333333;
 }
 
+
+
 /* ================ ESTILOS GERAIS ================ */
 body {
     font-family: 'Arial', sans-serif;
@@ -54,6 +56,10 @@ h6 {
 .nav-link:hover {
     text-decoration: underline;
     opacity: 0.8;
+}
+
+.custom-spacing {
+    padding-left: 100px; /* ou use margin-left: 20px; */
 }
 
 /* ================ HERO SECTION ================ */
