@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "Podologia": "podologia@email.com"
         };
 
-        let profissionalEmail = "marcos.barboza2509@gmail.com"; // padrão
+        let profissionalEmail = "mryan2509@gmail.com"; // padrão
         for (const key in profissionalEmails) {
             if (servico.includes(key)) {
                 profissionalEmail = profissionalEmails[key];
