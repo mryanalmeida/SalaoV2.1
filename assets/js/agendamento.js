@@ -13,24 +13,55 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Define data mínima como hoje
     dataInput.min = formatarData(hoje);
-    
+
+    // Bloqueia domingos (0) e segundas (1)
+    dataInput.addEventListener('change', function () {
+        const selectedDate = new Date(this.value);
+        const diaSemana = selectedDate.getDay();
+
+        if (diaSemana === 0 || diaSemana === 1) {
+            this.value = '';
+            horaSelect.innerHTML = '<option value="" selected disabled>Selecione um horário</option>';
+            return;
+        }
+
+        const isToday = selectedDate.toDateString() === hoje.toDateString();
+        horaSelect.innerHTML = '<option value="" selected disabled>Selecione um horário</option>';
+
+        const startHour = isToday ? Math.max(9, hoje.getHours() + 1) : 9;
+        const endHour = 19;
+
+        for (let hour = startHour; hour < endHour; hour++) {
+            for (let minute = 0; minute < 60; minute += 30) {
+                if (isToday && hour === hoje.getHours() && minute <= hoje.getMinutes()) {
+                    continue;
+                }
+                const timeString = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+                horaSelect.innerHTML += `<option value="${timeString}">${timeString}</option>`;
+            }
+        }
+
+        if (horaSelect.options.length <= 1) {
+            horaSelect.innerHTML = '<option value="" selected disabled>Não há horários disponíveis hoje</option>';
+        }
+    });
 
     // Máscara de telefone
     telefoneInput.addEventListener('input', function (e) {
         let valor = e.target.value.replace(/\D/g, '');
 
-        if (valor.length > 11) valor = valor.slice(0, 11)
+        if (valor.length > 11) valor = valor.slice(0, 11);
 
         if (valor.length >= 2 && valor.length <= 6) {
-            valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`
+            valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
         } else if (valor.length > 6 && valor.length <= 10) {
-            valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 6)}-${valor.slice(6)}`
+            valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 6)}-${valor.slice(6)}`;
         } else if (valor.length > 10) {
-            valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`
+            valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
         }
 
-        e.target.value = valor
-    })
+        e.target.value = valor;
+    });
 
     // Envio do formulário
     document.getElementById('agendamentoForm').addEventListener('submit', function (e) {
@@ -70,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "Podologia": "podologia@email.com"
         };
 
-        let profissionalEmail = "mryan2509@gmail.com"; // padrão
+        let profissionalEmail = "nanda@email.com"; // padrão
         for (const key in profissionalEmails) {
             if (servico.includes(key)) {
                 profissionalEmail = profissionalEmails[key];
