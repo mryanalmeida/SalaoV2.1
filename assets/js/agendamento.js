@@ -149,31 +149,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const telefoneInput = document.getElementById('telefone');
 
-    // ✅ MÁSCARA DE TELEFONE (fixo e celular com DDD)
-    telefoneInput.addEventListener('input', function (e) {
-        let valor = e.target.value.replace(/\D/g, ''); // Remove tudo que não for número
-
-        if (valor.length > 11) {
-            valor = valor.slice(0, 11); // Limita a 11 dígitos
-        }
-
-        if (valor.length <= 10) {
-            // Número fixo com 8 dígitos: (11) 2345-6789
-            if (valor.length >= 2 && valor.length <= 6) {
-                valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
-            } else if (valor.length > 6) {
-                valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 6)}-${valor.slice(6)}`;
-            }
-        } else {
-            // Número celular com 9 dígitos: (11) 91234-5678
-            valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
-        }
-
-        e.target.value = valor;
-    });
-
-
-
     // 7. INICIALIZAÇÃO
     // ================
     configurarDataInicial();
