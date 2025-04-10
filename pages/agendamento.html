@@ -18,12 +18,14 @@
 
 <body>
     <!-- Navbar -->
-    <div class="container">
-        <a class="navbar-brand navbar navbar-expand navbar-dark bg-purple fixed-top custom-spacing">
-            <i class="fas fa-spa me-2"></i>
-            <span class="custom-font">Nanda - Shalom Adonai</span>
-        </a>
-    </div>    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-purple fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-spa me-2"></i>
+                <span class="fw-bold">Nanda - Shalom Adonai</span>
+            </a>
+        </div>
+    </nav>
 
     <div class="container mt-5 pt-4">
         <h1 class="text-center mb-4">Agende Seu Horário</h1>
@@ -38,14 +40,16 @@
                                 <input type="text" class="form-control" id="nome" required>
                             </div>
                             <div class="mb-3">
-                                <label for="telefone" class="form-label"><i class="fas fa-phone"></i> Telefone/WhatsApp</label>
+                                <label for="telefone" class="form-label"><i class="fas fa-phone"></i>
+                                    Telefone/WhatsApp</label>
                                 <input type="tel" class="form-control" id="telefone" required>
                             </div>
                             <h5><i class="fas fa-concierge-bell"></i> Serviços e Profissionais</h5>
                             <div class="mb-2">
                                 <strong>1. Cabelos</strong><br>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Fernanda" id="cabelosFernanda">
+                                    <input class="form-check-input" type="checkbox" value="Fernanda"
+                                        id="cabelosFernanda">
                                     <label class="form-check-label" for="cabelosFernanda">Fernanda</label>
                                 </div>
                                 <div class="form-check">
@@ -60,7 +64,8 @@
                                     <label class="form-check-label" for="podologiaGeisa">Geisa (Podologia)</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="ThalitaPodologia" id="podologiaThalita">
+                                    <input class="form-check-input" type="checkbox" value="ThalitaPodologia"
+                                        id="podologiaThalita">
                                     <label class="form-check-label" for="podologiaThalita">Thalita (Podologia)</label>
                                 </div>
                             </div>
@@ -68,21 +73,25 @@
                                 <strong>3. Unhas</strong><br>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="Daniela" id="unhasDaniela">
-                                    <label class="form-check-label" for="unhasDaniela">Daniela (Manicure e Pedicure)</label>
+                                    <label class="form-check-label" for="unhasDaniela">Daniela (Manicure e
+                                        Pedicure)</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="GeisaUnhas" id="unhasGeisa">
                                     <label class="form-check-label" for="unhasGeisa">Geisa (Manicure e Pedicure)</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="ThalitaUnhas" id="unhasThalita">
-                                    <label class="form-check-label" for="unhasThalita">Thalita (Manicure e Pedicure)</label>
+                                    <input class="form-check-input" type="checkbox" value="ThalitaUnhas"
+                                        id="unhasThalita">
+                                    <label class="form-check-label" for="unhasThalita">Thalita (Manicure e
+                                        Pedicure)</label>
                                 </div>
                             </div>
                             <div class="mb-2">
                                 <strong>4. Sobrancelhas</strong><br>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Carol" id="sobrancelhasCarol">
+                                    <input class="form-check-input" type="checkbox" value="Carol"
+                                        id="sobrancelhasCarol">
                                     <label class="form-check-label" for="sobrancelhasCarol">Carol (Design)</label>
                                 </div>
                             </div>
@@ -103,7 +112,8 @@
                                     <option value="" selected disabled>Selecione</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-purple w-100"><i class="fas fa-calendar-check"></i> Confirmar Agendamento</button>
+                            <button type="submit" class="btn btn-purple w-100"><i class="fas fa-calendar-check"></i>
+                                Confirmar Agendamento</button>
                         </form>
                     </div>
                 </div>
@@ -130,9 +140,16 @@
                                 <i class="fas fa-download me-2 text-purple"></i>
                                 <strong>Como instalar nosso app:</strong>
                                 <ul class="mt-2">
-                                    <li><strong>Android:</strong> Toque no menu <em>(⋮ )</em> no topo do navegador e selecione <em>"Adicionar à tela inicial"</em>.</li>
-                                    <li><strong>iOS (iPhone/iPad):</strong> No Safari, toque no ícone <img src="../assets/img/compartilhar_ios.png" alt="Ícone compartilhar iOS" style="height: 1.5em; vertical-align: middle; margin: 0 0.25em;"> e escolha <em>"Adicionar à Tela de Início"</em>.</li>
-                                    <li><strong>Windows:</strong> No navegador Chrome ou Edge, clique no ícone de instalação na barra de endereços ou vá em <em>Menu > Instalar aplicativo</em>.</li>
+                                    <li><strong>Android:</strong> Toque no menu <em>(⋮ )</em> no topo do navegador e
+                                        selecione <em>"Adicionar à tela inicial"</em>.</li>
+                                    <li><strong>iOS (iPhone/iPad):</strong> No Safari, toque no ícone <img
+                                            src="../assets/img/compartilhar_ios.png" alt="Ícone compartilhar iOS"
+                                            style="height: 1.5em; vertical-align: middle; margin: 0 0.25em;"> e escolha
+                                        <em>"Adicionar à Tela de Início"</em>.
+                                    </li>
+                                    <li><strong>Windows:</strong> No navegador Chrome ou Edge, clique no ícone de
+                                        instalação na barra de endereços ou vá em <em>Menu > Instalar aplicativo</em>.
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
