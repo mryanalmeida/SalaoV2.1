@@ -17,13 +17,11 @@
 </head>
 
 <body>
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-purple fixed-top">
-        <div class="custom-spacing container">
-            <a class="navbar-brand">
-                <i class="fas me-2 fa-spa"></i>
-                <span class="fw-bold">Nanda - Shalom Adonai</span>
-            </a>
+    <nav class="navbar navbar-expand navbar-dark bg-purple fixed-top">
+        <div class="container">
+            <a class="navbar-brand">Nanda - Shalom Adonai</a>
         </div>
     </nav>
 
@@ -36,84 +34,43 @@
                     <div class="card-body">
                         <form id="agendamentoForm">
                             <div class="mb-3">
-                                <label for="nome" class="form-label"><i class="fas fa-user"></i> Nome Completo</label>
+                                <label for="nome" class="form-label">Nome Completo</label>
                                 <input type="text" class="form-control" id="nome" required>
                             </div>
+
                             <div class="mb-3">
-                                <label for="telefone" class="form-label"><i class="fas fa-phone"></i>
-                                    Telefone/WhatsApp</label>
+                                <label for="telefone" class="form-label">Telefone</label>
                                 <input type="tel" class="form-control" id="telefone" required>
                             </div>
-                            <h5><i class="fas fa-concierge-bell"></i> Serviços e Profissionais</h5>
-                            <div class="mb-2">
-                                <strong>1. Cabelos</strong><br>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Fernanda"
-                                        id="cabelosFernanda">
-                                    <label class="form-check-label" for="cabelosFernanda">Fernanda</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Rosana" id="cabelosRosana">
-                                    <label class="form-check-label" for="cabelosRosana">Rosana</label>
-                                </div>
-                            </div>
-                            <div class="mb-2">
-                                <strong>2. Podologia</strong><br>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Geisa" id="podologiaGeisa">
-                                    <label class="form-check-label" for="podologiaGeisa">Geisa (Podologia)</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="ThalitaPodologia"
-                                        id="podologiaThalita">
-                                    <label class="form-check-label" for="podologiaThalita">Thalita (Podologia)</label>
-                                </div>
-                            </div>
-                            <div class="mb-2">
-                                <strong>3. Unhas</strong><br>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Daniela" id="unhasDaniela">
-                                    <label class="form-check-label" for="unhasDaniela">Daniela (Manicure e
-                                        Pedicure)</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="GeisaUnhas" id="unhasGeisa">
-                                    <label class="form-check-label" for="unhasGeisa">Geisa (Manicure e Pedicure)</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="ThalitaUnhas"
-                                        id="unhasThalita">
-                                    <label class="form-check-label" for="unhasThalita">Thalita (Manicure e
-                                        Pedicure)</label>
-                                </div>
-                            </div>
-                            <div class="mb-2">
-                                <strong>4. Sobrancelhas</strong><br>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Carol"
-                                        id="sobrancelhasCarol">
-                                    <label class="form-check-label" for="sobrancelhasCarol">Carol (Design)</label>
-                                </div>
-                            </div>
-                            <div class="mb-2">
-                                <strong>8. Cílios</strong><br>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Tiffany" id="ciliosTiffany">
-                                    <label class="form-check-label" for="ciliosTiffany">Tiffany</label>
-                                </div>
-                            </div>
+
                             <div class="mb-3">
-                                <label for="data" class="form-label"><i class="fas fa-calendar-alt"></i> Data</label>
-                                <input type="date" class="form-control" id="data" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="hora" class="form-label"><i class="fas fa-clock"></i> Horário</label>
-                                <select class="form-select" id="hora" required>
-                                    <option value="" selected disabled>Selecione</option>
+                                <label for="servico" class="form-label">Serviço</label>
+                                <select class="form-select" id="servico" required>
+                                    <option value="" selected disabled>Selecione um serviço</option>
+                                    <option value="Corte e Escova - Nanda">Corte e Escova (Nanda)</option>
+                                    <option value="Coloração - Carla">Coloração (Carla)</option>
+                                    <option value="Manicure - Juliana">Manicure (Juliana)</option>
+                                    <option value="Pedicure - Juliana">Pedicure (Juliana)</option>
+                                    <option value="Design de Sobrancelhas - Ana">Design de Sobrancelhas (Ana)</option>
+                                    <option value="Depilação - Marta">Depilação (Marta)</option>
+                                    <option value="Podologia - Renata">Podologia (Renata)</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-purple w-100"><i class="fas fa-calendar-check"></i>
-                                Confirmar Agendamento</button>
+
+                            <div class="mb-3">
+                                <label for="data" class="form-label">Data</label>
+                                <input type="date" class="form-control" id="data" required onkeydown="return false"
+                                    onbeforeinput="event.preventDefault()" onfocus="this.showPicker()">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="hora" class="form-label">Horário</label>
+                                <select class="form-select" id="hora" required>
+                                    <option value="" selected disabled>Selecione um horário</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-purple w-100">Confirmar Agendamento</button>
                         </form>
                     </div>
                 </div>
@@ -140,18 +97,19 @@
                                 <i class="fas fa-download me-2 text-purple"></i>
                                 <strong>Como instalar nosso app:</strong>
                                 <ul class="mt-2">
-                                    <li><strong>Android:</strong> Toque no menu <em>(⋮ )</em> no topo do navegador e
-                                        selecione <em>"Adicionar à tela inicial"</em>.</li>
-                                    <li><strong>iOS (iPhone/iPad):</strong> No Safari, toque no ícone <img
-                                            src="../assets/img/compartilhar_ios.png" alt="Ícone compartilhar iOS"
-                                            style="height: 1.5em; vertical-align: middle; margin: 0 0.25em;"> e escolha
-                                        <em>"Adicionar à Tela de Início"</em>.
+                                    <li><strong>Android:</strong> Toque no menu <em>(⋮ )</em> no topo do
+                                        navegador e selecione <em>"Adicionar à tela inicial"</em>.</li>
+                                    <li><strong>iOS (iPhone/iPad):</strong> No Safari, toque no ícone<img
+                                            src="img/compartilhar_ios.png" alt="Ícone compartilhar iOS"
+                                            style="height: 1.5em; vertical-align: middle; margin: 0 0.25em;">na parte
+                                        inferior da tela e escolha <em>"Adicionar à Tela de Início"</em>.
                                     </li>
                                     <li><strong>Windows:</strong> No navegador Chrome ou Edge, clique no ícone de
                                         instalação na barra de endereços ou vá em <em>Menu > Instalar aplicativo</em>.
                                     </li>
                                 </ul>
                             </li>
+
                         </ul>
                     </div>
                 </div>
