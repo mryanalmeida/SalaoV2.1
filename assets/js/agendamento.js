@@ -13,25 +13,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Define data mínima como hoje
     dataInput.min = formatarData(hoje);
-
     
 
     // Máscara de telefone
     telefoneInput.addEventListener('input', function (e) {
         let valor = e.target.value.replace(/\D/g, '');
 
-        if (valor.length > 11) valor = valor.slice(0, 11);
+        if (valor.length > 11) valor = valor.slice(0, 11)
 
         if (valor.length >= 2 && valor.length <= 6) {
-            valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
+            valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`
         } else if (valor.length > 6 && valor.length <= 10) {
-            valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 6)}-${valor.slice(6)}`;
+            valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 6)}-${valor.slice(6)}`
         } else if (valor.length > 10) {
-            valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
+            valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`
         }
 
-        e.target.value = valor;
-    });
+        e.target.value = valor
+    })
 
     // Envio do formulário
     document.getElementById('agendamentoForm').addEventListener('submit', function (e) {
